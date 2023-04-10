@@ -3,6 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --background : white;
+  --background-body : #f7f7f7;
+  --text-color : black;
+  --onda : url("./img/onda.svg")
+}
+@media (prefers-color-scheme: dark) {
+  :root{
+    --background : #111;
+    --background-body : #000;
+    --text-color : white;
+    --onda : url("./img/onda-dark.svg")
+  }
+  
+}
+
+
 .titulo {
   display: inline-block;
   place-self: center;
@@ -36,7 +53,7 @@
   gap: 20px;
   padding: 3rem;
   align-items: center;
-  background: white;
+  background: var(--background);
   place-self: center;
 }
 .caracteristicas {
@@ -45,13 +62,13 @@
   grid-template-columns: auto 1fr;
   padding: 20px;
   align-items: start;
-  background: white;
+  background: var(--background);
 }
 .caracteristicas:hover {
   border-left: 5px solid red;
 }
 .caracteristicas:nth-child(odd) {
-  background: #f7f7f7;
+  background: var(--background-body);
 }
 
 .ctexto {
@@ -104,13 +121,13 @@
   font-size: 4rem;
   color: #c6c6c6;
   padding: 40px;
-  background-image: url("./img/onda.svg");
+  background-image: var(--onda);
 }
 footer {
   display: block;
   text-align: center;
   padding: 40px;
-  background: white;
+  background: var(--background);
   width: 100%;
 }
 main,
@@ -127,8 +144,9 @@ header {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
 
-  background: #f7f7f7;
+  background: var(--background-body);
 }
 h1,
 p {
@@ -160,10 +178,10 @@ h2 {
 .menu {
   display: flex;
   flex-wrap: wrap;
-  background: white;
+  background: var(--background);
   padding: 20px 30px;
   border-radius: 3px;
-  color: rgb(26, 25, 25);
+  color: var(--text-color);
 }
 
 .menu:hover {
